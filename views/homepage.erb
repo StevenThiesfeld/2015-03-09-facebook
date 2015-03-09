@@ -1,3 +1,4 @@
+<script src="scripts.js"></script>
 <p>Logged in as <strong><%= @current_user.name %></strong>.</p>
 
 <% @posts.each do |post| %>
@@ -5,11 +6,13 @@
     <h1><%= post.title %></h1>
     <p><%= post.body %></p>
     
-    <div class="likes">
+    <div id="<%= post.id %>" class="likes">
       <% if @current_user.liked_post?(post.id) %>
-        <em>You like this post!</em>
+        <img src="images/star.jpg" width="20px">
       <% else %>
-        <a href="/like/<%= post.id %>">Like</a>
+        <a href="/like/<%= post.id %>">
+          <img src="images/images.png" width="20px">
+        </a>
       <% end %>
       
       <span>
