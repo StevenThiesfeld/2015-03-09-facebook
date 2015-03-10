@@ -1,6 +1,6 @@
-require "sinatra"
-require "sqlite3"
-require 'json'
+require 'rubygems'
+require 'bundler/setup'
+Bundler.require(:default)
 
 DATABASE = SQLite3::Database.new("database.db")
 DATABASE.results_as_hash = true
